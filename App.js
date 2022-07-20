@@ -1,15 +1,19 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, StatusBar } from 'react-native';
+import "react-native-gesture-handler"
 
-import { Container, Titulo, Nome, Botao, BotaoTexto } from './src/styles';
+import Routes from './src/routes';
+import firebase from "./src/services/firebaseConnection"
+import { NavigationContainer } from '@react-navigation/native';
+import AuthProvider from './src/contexts/auth';
+
 export default function App() {
   return (
-    <Container>
-      <Titulo>Ola!</Titulo>
-      <Nome color="red">Everson</Nome>
-
-      <Botao onPress={() => alert("oi")}>
-        <BotaoTexto>Entrar</BotaoTexto>
-      </Botao>
-    </Container>
-  );}
+    <NavigationContainer>
+      <AuthProvider>
+        <StatusBar backgroundColor={"#131313"} barStyle="light-content"/>
+        <Routes />
+      </AuthProvider>
+    </NavigationContainer>
+  );
+}
 
