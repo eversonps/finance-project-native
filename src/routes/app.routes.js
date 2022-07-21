@@ -7,10 +7,11 @@ import New from "../pages/New";
 import Profile from "../pages/Profile";
 
 const AppDrawer = createDrawerNavigator()
+import CustomDrawer from "../components/CustomDrawer";
 
 export default function AppRoutes(){
     return (
-        <AppDrawer.Navigator 
+        <AppDrawer.Navigator
         drawerStyle={{
             backgroundColor: '#171717'
         }}
